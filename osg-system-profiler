@@ -317,7 +317,7 @@ if $tarball_install; then
 fi
 
 echo "***** Running: /usr/bin/env | sort"
-/usr/bin/env | sort
+/usr/bin/env -0 | sort -z | tr '\0' '\n'
 echo ""
 
 list_directory "${OSG_LOCATION-}/etc/grid-security"
